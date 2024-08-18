@@ -49,52 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//alert
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    const email = document.getElementById('email').value;
-    const name = document.getElementById('name').value;
-    const message = document.getElementById('message').value;
-
-    if (email && name && message) {
-        // Simulate sending an email
-        setTimeout(function() {
-            showAlert('Message sent successfully!', false);
-        }, 500); // Simulate a delay for sending
-
-        // Reset form after submission
-        document.getElementById('contact-form').reset();
-    } else {
-        showAlert('Please fill out all fields correctly.', true);
-    }
-});
-
-function showAlert(message, isError) {
-    const alertBox = document.getElementById('alert-box');
-    const alertMessage = document.getElementById('alert-message');
-
-    alertMessage.textContent = message;
-
-    if (isError) {
-        alertBox.classList.add('error');
-    } else {
-        alertBox.classList.remove('error');
-    }
-
-    alertBox.classList.remove('hidden');
-
-    // Automatically hide the alert after 5 seconds
-    setTimeout(function() {
-        alertBox.classList.add('hidden');
-    }, 5000);
-}
-
-// Close the alert manually
-document.getElementById('close-alert').addEventListener('click', function() {
-    document.getElementById('alert-box').classList.add('hidden');
-});
-
 
 
 
